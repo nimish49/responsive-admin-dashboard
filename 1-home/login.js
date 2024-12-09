@@ -1,4 +1,4 @@
-document.getElementById("login").addEventListener("click",login);
+document.getElementById("btn1").addEventListener("click",login);
 
 function login(e) {
     e.preventDefault();  // prevent default behaviour of form submit
@@ -15,7 +15,7 @@ function login(e) {
 
     if(storedusername == username || storedpassword == password){
         alert(`login succesful,welcome ${username}`);
-        window.location.href = "welcome.html";
+        window.location.href = "/1-home/index.html";
     
     }
     else{

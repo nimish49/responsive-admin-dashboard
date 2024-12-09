@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap');
 
 :root {
-    --main-color: #897e95;
+    --main-color: #FF0266;
     --color-dark: #bcc5d6;
     --text-grey: #c81e1e;
     --text-mera: #F7F0F1;
@@ -14,6 +14,12 @@
     list-style-type: none;
     box-sizing: border-box;
     font-family: 'Merriweather', sans-serif;
+}
+.logo{
+    font-size:5rem;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+    
 }
 
 #menu-toggle {
@@ -28,12 +34,11 @@
     bottom: 0;
     top: 0;
     z-index: 100;
-    background: var(--text-mera);
+    background:#EC407A;
     transition: left 300ms;
 }
 
 .side-header {
-    box-shadow: rgba;
     background: var(--main-color);
     height: 60px;
     display: flex;
@@ -42,32 +47,20 @@
 }
 
 .side-header h3, side-head span {
-    color:#0E171C;
     font-weight: 400;
 }
 
 .side-content {
     height: calc(100vh - 60px);
-    overflow: auto;
+    /* overflow: auto; */
+    transition:all 0.3s ease-in-out;
 }
-/* mycontent */
-.my-content{
-   text-align:center;
-   margin-top: 25px;
-   font-size: 30px;
-   font-style: oblique;
-   text-decoration: underline wavy pink;
-   text-shadow: 1px 1px #000000;
-   transition:transform 0.5s;
-   cursor: pointer;
-   transform: translateY(20px);
-   -webkit-transform: translateY(10px);
-
-   &:hover{
-      transform: translateY(0px);
-      -webkit-transform: translateY(0px);
-   }
-   
+.side-menu:hover{
+    color:#666;
+}
+.page-header a{
+    text-transform: none;
+    color: white;
 }
 
 /* width */
@@ -109,16 +102,16 @@
     width: 80px;
     display: inline-block;
     margin: 0 auto .5rem auto;
-    border: 3px solid #899DC1;
+    border: 3px solid black;
 }
 
 .profile h4 {
-    color: #fff;
+    color:black;
     font-weight: 500;
 }
 
 .profile small {
-    color: #899DC1;
+    color:black;
     font-weight: 600;
 }
 
@@ -129,15 +122,15 @@
 
 .side-menu a {
     display: block;
-    padding: 1.2rem 0rem;
+    padding: 1.5rem;
 }
 
-.side-menu a.active {
-    background: #13161a;
+.side-menu a.active:hover {
+    
 }
 
 .side-menu a.active span, .side-menu a.active small {
-    color:beige;
+    color:black;
 }
 
 .side-menu a span {
@@ -145,9 +138,22 @@
     text-align: center;
     font-size: 1.7rem;
 }
+.side-menu{
+    width: 164px;
+    position: absolute;
+    top: 17rem;
+    left: 0;
+    bottom: 0;
+    transition: left 3s ease-in;
+}
+.side-menu:hover{
+    left: 0;
+    color: #000000;
+
+}
 
 .side-menu a span, .side-menu a small {
-    color: #899DC2;
+    color:black;
 }
 
 #menu-toggle:checked ~ .sidebar {
@@ -262,37 +268,55 @@ header {
 }
 
 main {
-    margin-top: 60px;
+    margin-top: 0.1rem;
 }
 
 .page-header {
     padding: 1.3rem 1rem;
-    background:#699699;
-    border-bottom: 1px solid #dee2e8;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    margin-left: 0.1rem;
+    background:#FF0266;
+    border-bottom: 1px solid ;
 }
 
 .page-header h1, .page-header small {
-    color: #74767d;
+    color:black;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-transform: capitalize;
+    
 }
 
  .page-content {
     padding: 1.3rem 1rem;
-    background:#A8C3C9;
+    background:#F48FB1;
 }
 
 .analytics {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 4fr);
+    grid-gap: 0.5rem;
     margin-top: .5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .card {
     box-shadow: 0px 5px 5px -5px rgb(0 0 0 / 10%);
     background: #fff;
     padding: 1rem;
-    border-radius: 3px;
+    border-radius:30px 10px 30px 10px;
+    background-color:#FF80AB;
+    border:2px solid black;
+    transition: all 3s ease-in-out;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card:hover{
+    color:#FF80AB;
+    background-color: #EC407A;
 }
 
 .card-head {
@@ -349,7 +373,7 @@ main {
 
 .records {
     box-shadow: 0px 5px 5px -5px rgb(0 0 0 / 10%);
-    background: #fff;
+    background:#F48FB1;
     border-radius: 3px;
 }
 
@@ -379,7 +403,7 @@ input, button, select {
 .add select, .browse input, .browse select {
     height: 35px;
     border: 1px solid #b0b0b0;
-    border-radius: 3px;
+    border-radius: 30px 20px 30px 20px;
     display: inline-block;
     width: 75px;
     padding: 0rem .5rem;
@@ -415,7 +439,7 @@ table {
 }
 
 table thead tr {
-    background: #e9edf2;
+    background: #B0BEC5;
 }
 
 table thead th {

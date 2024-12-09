@@ -4,7 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="update.css"> -->
     <title>Document</title>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      /* padding: 20px; */
+      background-color: #f4f4f9;
+      
+    }
+     
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 40px solid #405189;
+    }
+
+    table th, table td {
+      padding: 15px;
+      text-align: left;
+      
+    }
+
+    table th {
+     border-left: 5px solid yellow ;
+    
+      background-color: #405189;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    table tr {
+      border-bottom: 1px solid whitesmoke;
+    }
+
+    table tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+
+    table tr:last-of-type {
+      border-bottom: 2px solid #009879;
+    }
+
+    table tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+
+    }
+    input[type="number"]{
+       font-size: 16px;
+    }
+
+    input[type="text"]:focus {
+      border-color: #009879;
+      outline: none;
+    }
+
+    .button {
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .button-edit {
+      background-color: #7d4caf; /* Green */
+      border-radius: 50px;
+      width: 60px;
+
+    }
+
+    .button-save {
+      background-color: #b1297d; /* Blue */
+      display: none;
+    }
+
+    .button-delete {
+      background-color: #986631; /* Red */
+    }
+
+    @media (max-width:426px) {
+        table th, table td {
+      padding: 0px;
+      text-align: left;
+      
+    }
+    table th {
+     border-left: 0px solid yellow ;
+    
+      background-color: #2e167b;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 0px solid #2e167b;
+    }
+    input[type="text"] {
+      width: 90%;
+      padding: 0px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-size: 12px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+
+    }
+    input[type="number"]{
+       font-size: 12px;
+    }
+    .button{
+        height: 25px;
+      width: 60px;
+      font-size: 10px;
+    }
+        
+    }
+    .sidebar {
+    position: fixed;
+    height: 100%;
+    width: 165px;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 100;
+    background:#BBDEFB;
+    transition: left 300ms;
+}
+.page-header{
+    font-size: 1rem;
+    margin-bottom: 0rem;
+    background-color:#405189;
+}
+.side-header {
+    background:#BBDEFB;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
 </head>
 <body>
     <input type="checkbox" id="menu-toggle">
@@ -15,11 +185,10 @@
         
         <div class="side-content">
             <div class="profile">
-                <div class="profile-img bg-img" style="background-image: url(img/3.jpeg)"></div>
+                <!-- <div class="profile-img bg-img" style="background-image: url(img/3.jpeg)"></div> -->
                 <h4>NIMISH YADAV</h4>
                 <small>FULL STACK DEVLOPER</small>
             </div>
-
             <div class="side-menu">
                 <ul>
                     <li>
@@ -90,20 +259,15 @@
                     </label>
                     
                     <div class="notify-icon">
-                        <span class="las la-envelope"></span>
-                        <span class="notify"></span>
+                       
                     </div>
                     
                     <div class="notify-icon">
-                        <span class="las la-bell"></span>
-                        <span class="notify"></span>
+                       
                     </div>
                     
                     <div class="user">
-                        <div class="bg-img" style="background-image: url(img/1.jpeg)"></div>
-                        
-                        <span class="las la-power-off"></span>
-                        <span>Logout</span>
+                
                     </div>
                 </div>
             </div>
@@ -113,9 +277,18 @@
          <main>
             
             <div class="page-header">
-                <h1 style="color: black;text-decoration: underline wavy pink;">Dashboard</h1>
-                <small style="color: black;">Home / Dashboard</small>
+                <h1>Dashboard</h1>
+                <a href="index.html">Home</a>
+                <a href="/2-employedetails/insert1.html">Add Employee/ </a>
+                <a href="displaydata.html">display Data/</a>
+                <a href="updatedata.html">Update Data</a>
             </div>
+
+        
+                <table id="demo">
+
+                </table>
+        
             
             <!-- <div class="page-content">
             
@@ -470,7 +643,13 @@
             </div>
             
         </main> -->
-        
+        <div id="demo"></div>
+
+
+
+
+    
     </div>
+    <script src="/js/update.js"></script>
 </body>
 </html>

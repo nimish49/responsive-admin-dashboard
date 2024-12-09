@@ -15,21 +15,22 @@ async function add(e){
     let name = document.getElementById("myname").value;
     let city = document.getElementById("city").value;
     let salary = document.getElementById("salary").value;
-    let email = document.getElementById("myemail").value;
+    // let email = document.getElementById("myemail").value;
 
-    let url = "http://localhost:3000/student";
+    let url = "http://localhost:3000/employees";
 
     try {
         let response = await fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json; charset=utf8',
+                'Content-Type': 'application/json; charset=UTF-8',
             },
             body: JSON.stringify({
                 employeno: empno,
                 name: name,
                 city: city,
-                salary: salary
+                salary: salary,
+                
             }),
         });
         console.log(response);

@@ -1,105 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- coding by @_.codedevotee -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Register form</title>
-
-    <!--Boxicons CDN-->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' 
-    rel='stylesheet'>
-
-    <!--Custom CSS-->
     <link rel="stylesheet" href="signup.css">
-
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <style>
+        .sidebar {
+    position: fixed;
+    height: 100%;
+    width: 165px;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 100;
+    background:#BBDEFB;
+    transition: left 300ms;
+}
+.page-header{
+    font-size: 1rem;
+    margin-bottom: 5rem;
+    background-color:#BBDEFB;
+    margin-bottom: 7rem;
+}
+.side-header {
+    background:#BBDEFB;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.side-menu ul li{
+    color: black;
+    
+}
+    </style>
 </head>
-
 <body>
-    <!-- FOR SOURCE CODE COMMENT "CODE" -->
-
-    <div class="wrapper">
-        <span class="rotate-bg"></span>
-        <span class="rotate-bg2"></span>
-
-        <div class="form-box login">
-            <h2 class="title animation" style="--i:0; --j:21">Login</h2>
-            <form action="#">
-
-                <div class="input-box animation" style="--i:1; --j:22">
-                    <input type="text" required>
-                    <label for="">Username</label>
-                    <i class='bx bxs-user'></i>
-                </div>
-
-                <div class="input-box animation" style="--i:2; --j:23">
-                    <input type="password" required>
-                    <label for="">Password</label>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-                <button type="submit" class="btn animation" style="--i:3; --j:24">Login</button>
-                <div class="linkTxt animation" style="--i:5; --j:25">
-                    <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
-                </div>
-            </form>
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="side-header">
+        
         </div>
+        
+        <div class="side-content">
+            <div class="profile">
+                <div class="profile-img bg-img" style="background-image: url(img/3.jpeg)"></div>
+                <h4 style="color:black;">NIMISH YADAV</h4>
+                <small>FULL STACK DEVLOPER</small>
+            </div>
 
-        <div class="info-text login">
-            <h2 class="animation" style="--i:0; --j:20">Welcome Back!</h2>
-            <p class="animation" style="--i:1; --j:21">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti,rem?</p>
+            <div class="side-menu">
+                <ul>
+                    <li>
+                       <a href="/1-home/index.html" class="active">
+                            <span class="las la-home"></span>
+                            <small>Dashboard</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href="#">
+                            <span class="las la-user-alt"></span>
+                            <small>Profile</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href="/1-home/updatedata.html">
+                            <span class="las la-envelope"></span>
+                            <small>update data</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href="/1-home/displaydata.html">
+                            <span class="las la-clipboard-list"></span>
+                            <small>display data</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href="/2-employedetails/insert1.html">
+                            <span class="las la-shopping-cart"></span>
+                            <small>insert Data</small>
+                        </a>
+                    </li>
+                    <li>
+                       <a href="">
+                            <span class="las la-tasks"></span>
+                            <small>additional pages</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/1-home/login.html">
+                             <span class="las la-tasks"></span>
+                             <small>Log in</small>
+                         </a>
+                     </li>
+                     <li>
+                        <a href="/1-home/signun.html">
+                             <span class="las la-tasks"></span>
+                             <small>Sign UP</small>
+                         </a>
+                     </li>
+                  
+                
+                </ul>
+            </div>
         </div>
-
-
-
-
-
-
-
-        <div class="form-box register">
-
-            <h2 class="title animation" style="--i:17; --j:0">Sign Up</h2>
-
-            <form action="#">
-
-                <div class="input-box animation" style="--i:18; --j:1">
-                    <input type="text" required>
-                    <label for="">Username</label>
-                    <i class='bx bxs-user'></i>
-                </div>
-
-                <div class="input-box animation" style="--i:19; --j:2">
-                    <input type="email" required>
-                    <label for="">Email</label>
-                    <i class='bx bxs-envelope'></i>
-                </div>
-
-                <div class="input-box animation" style="--i:20; --j:3">
-                    <input type="password" required>
-                    <label for="">Password</label>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-
-                <button type="submit" class="btn animation" style="--i:21;--j:4">Sign Up</button>
-
-                <div class="linkTxt animation" style="--i:22; --j:5">
-                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
-                </div>
-
-            </form>
-        </div>
-
-        <div class="info-text register">
-            <h2 class="animation" style="--i:17; --j:0;">Welcome Back!</h2>
-            <p class="animation" style="--i:18; --j:1;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti,rem?</p>
-        </div>
-
     </div>
-
-    <!--Script.js-->
-    <script src="signup.js"></script>
-</body>
-
-</html> 
+    
+    <div class="main-content">
+        <main>
+            <div class="page-header">
+                <h1>Sign Up</h1>
+                <small style="color: black;">Home / Sign Up</small>
+            </div>
+        
+            <!-- Sign Up Form Section -->
+            <div class="signup-form-container">
+                <h2>Create Account</h2>
+                <form action="#" method="POST" class="signup-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Choose a Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Choose a Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="psw" name="confirm-password" placeholder="Confirm your Password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="btn"><a href="/1-home/index.html">Sign Up</a></button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <script src="sighup.js"></script>
+    </div>
+</body>        

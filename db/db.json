@@ -1,26 +1,18 @@
 {
-    "employees": [
-        {
-            "id": 1,
-            "name": "John Doe",
-            "department": "IT",
-            "salary": 80000,
-            "position": "Software Engineer"
-             
-        },
-        {
-            "id": 2,
-            "name": "Jane Smith",
-            "department": "Finance",
-            "salary": 70000,
-            "position": "Accountant"
-        },
-        {
-            "id": 3,
-            "name": "Mike Johnson",
-            "department": "IT",
-            "salary": 90000,
-            "position": "Project Manager"
-        }
-    ]
+  "employees": [
+    {
+      "employeno": "nimish yadav",
+      "name": "nimish49@gmail.com",
+      "city": "ashta",
+      "salary": "25000",
+      "id": "63e6"
+    },
+    {
+      "id": "d3ce",
+      "employeno": "nimish yadav",
+      "name": "nanuy3012@gmail.com",
+      "city": "hhdujsd",
+      "salary": "757654"
+    }
+  ]
 }

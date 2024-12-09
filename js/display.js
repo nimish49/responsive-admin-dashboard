@@ -26,16 +26,16 @@ async function dataShow() {
     myData.map((key) => {
       myTable += `
          <tr>
+          <td>${key.employeno}</td>
           <td>${key.name}</td>
-          <td>${key.department}</td>
+          <td>${key.city}</td>
           <td>${key.salary}</td>
-          <td>${key.position}</td>
          </tr>
       `;
     });
   
     myTable += `</table>`;
-    document.getElementById("mypara").innerHTML = myTable;
+    document.getElementById("demo").innerHTML = myTable;
   
   }
   dataShow();

@@ -1,54 +1,57 @@
 function editRow(id) {
-    document.getElementById(eno-${id}).removeAttribute("readonly");
-    document.getElementById(nm-${id}).removeAttribute("readonly");
-    document.getElementById(city-${id}).removeAttribute("readonly");
-    document.getElementById(salary-${id}).removeAttribute("readonly");
+    document.getElementById(`eno-${id}`).removeAttribute("readonly");
+    document.getElementById(`nm-${id}`).removeAttribute("readonly");
+    document.getElementById(`city-${id}`).removeAttribute("readonly");
+    document.getElementById(`salary-${id}`).removeAttribute("readonly");
   
-    document.getElementById(edit-${id}).style.display = "none";
-    document.getElementById(save-${id}).style.display = "inline";
+    document.getElementById(`edit-${id}`).style.display = "none";
+    document.getElementById(`save-${id}`).style.display = "inline";
   }
   
-  function saveRow(id) {
-    let myEmpno = document.getElementById(eno-${id}).value;
-    let myName = document.getElementById(nm-${id}).value;
-    let myCity = document.getElementById(city-${id}).value;
-    let mySalary = document.getElementById(salary-${id}).value;
+ async function saveRow(id) {
+    let myEmpno = document.getElementById(`eno-${id}`).value;
+    let myName = document.getElementById(`nm-${id}`).value;
+    let myCity = document.getElementById(`city-${id}`).value;
+    let mySalary = document.getElementById(`salary-${id}`).value;
   
-    let url = http://localhost:3000/employees/${id};
+    let url = `http://localhost:3000/employees/${id}`;
   
-    fetch(url, {
+    let myobj = await fetch(url, {
       method: "PUT",
+      headers:
+      { 
+       "Content-type": "application/json,charset=UTF-8"
+      },
       body: JSON.stringify({
-        employeeno: myEmpno,
+        employeno: myEmpno,
         name: myName,
         city: myCity,
         salary: mySalary,
       }),
-      headers: { "Content-type": "application/json" },
-    })
-      .then((response) => {
-        if (response.ok) {
-          alert("Data updated");
-          dataShow();
-        } else {
-          throw new Error("Data not updated");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("Error occured while updating");
-      });
-  }
-  
-  function myrecRemove(id) {
-    let url = http://localhost:3000/employees/${id};
-  
-    fetch(url, {
-      method: "DELETE",
-    }).then((data) => {
-      alert("Record Deleted");
+     
     });
+      console.log(myobj);
+      let data = await myobj.json();
+      alert("data updated successfully")
   }
+  
+   async function myrecRemove(id) {
+    let url = `http://localhost:3000/employees/${id}`;
+    let myobj = await fetch(url, {
+      method: "DELETE",
+    });
+     console.log(myobj);
+     let data = await myobj.json();
+     console.log(data);
+     alert("data deleted successfully");
+  }
+  
+  //   fetch(url, {
+  //     method: "DELETE",
+  //   }).then((data) => {
+  //     alert("Record Deleted");
+  //   });
+  // }
   
   async function dataShow() {
     let myTable = `
@@ -69,10 +72,10 @@ function editRow(id) {
   
     console.log(myData);
   
-    myData.forEach((key) => {
+    myData.map((key) => {
       myTable += `
        <tr>
-       <td><input type="text" id="eno-${key.id}" value="${key.employeeno}" readonly></td>
+       <td><input type="text" id="eno-${key.id}" value="${key.employeno}" readonly></td>
        <td><input type="text" id="nm-${key.id}" value="${key.name}" readonly></td>
        <td><input type="text" id="city-${key.id}" value="${key.city}" readonly></td>
        <td><input type="text" id="salary-${key.id}" value="${key.salary}" readonly></td>
@@ -84,9 +87,8 @@ function editRow(id) {
        </tr>
        `;
     });
-    myTable += </table>;
+    // myTable += "</table>";
     document.getElementById("demo").innerHTML = myTable;
-  }
-  
+  } 
+
   dataShow();
-  
